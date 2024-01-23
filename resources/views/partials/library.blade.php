@@ -6,7 +6,12 @@
 <div class="wrapper">
     <div id="card-container" class=" d-flex justify-content-center flex-wrap">
         @foreach ($comics as $comic)
-            <AppCard :title="comic.series" :image="comic.thumb" />
+        <div>
+            <div class="square-card">
+                <img class="w-100" src="{{$comic['thumb']}}" alt="">
+            </div>
+            <h5 class="mt-3">{{$comic['series']}}</h5>
+        </div>  
         @endforeach
     </div>
 </div>
@@ -17,6 +22,17 @@
 <style>
     * {
         color: white;
+    }
+
+    .square-card {
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        cursor: pointer;
+    }
+    
+    h5 {
+        width: 200px;
     }
     
     .section-title {
