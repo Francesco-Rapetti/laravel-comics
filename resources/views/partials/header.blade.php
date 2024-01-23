@@ -22,7 +22,7 @@
                 <ul class="navbar-nav mb-2 mb-lg-0 justify-self-end">
                     <!-- Loop through navbarLinks array -->
                     @foreach ($links as $link)
-                        <li class="nav-item fw-bold">
+                        <li class="nav-item fw-bold header-link">
                             <!-- Individual Navbar Link -->
                             <a aria-current="page" href="#">{{ $link['title'] }}</a>
                         </li>
@@ -66,13 +66,13 @@
         height: 100% !important;
     }
 
-    li {
+    li.header-link {
         height: 1.3em;
         overflow: hidden;
     }
 
     /* Styles for the links in the list items */
-    li a {
+    li.header-link a {
         color: #484c51;
         text-decoration: none;
         border-bottom: 6px solid transparent;
@@ -80,12 +80,12 @@
     }
 
     /* Styles for the links when hovered */
-    li a:hover {
+    li.header-link a:hover {
         color: #0c7cec;
     }
 
     /* Styles for the active link */
-    li a.active {
+    li.header-link a.active {
         color: #0c7cec;
         border-color: transparent;
     }
@@ -93,24 +93,24 @@
     /* Media query for screens larger than 992px */
     @media screen and (min-width: 992px) {
 
-        li {
+        li.header-link {
             height: auto;
             overflow: visible;
         }
 
         /* Additional styles for the links in the media query */
-        li a {
+        li.header-link a {
             padding-top: 58px;
             padding-bottom: 53px;
         }
 
         /* Additional styles for the links when hovered in the media query */
-        li a:hover {
+        li.header-link a:hover {
             color: #0c7cec;
         }
 
         /* Additional styles for the active link in the media query */
-        li a.active {
+        li.header-link a.active {
             color: #0c7cec;
             border-color: #0c7cec;
         }
