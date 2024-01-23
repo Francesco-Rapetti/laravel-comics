@@ -8,7 +8,7 @@ return [
             'title' => 'CHARACTERS'
         ],
         'link2' => [
-            'url' => '#',
+            'url' => 'comics',
             'title' => 'COMICS'
         ],
         'link3' => [
@@ -191,7 +191,7 @@ return [
                 ],
                 "link2" => [
                     "name" => "Comics",
-                    "link" => "#"
+                    "link" => "comics"
                 ],
                 "link3" => [
                     "name" => "Movies",

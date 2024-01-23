@@ -13,7 +13,7 @@
                             @foreach ($item['links'] as $link)
                             <li>
                                 <!-- Render the link name and set the href attribute -->
-                                <a class="footer-link" href="{{ $link['link'] }}">{{ $link['name'] }}</a>
+                                <a class="footer-link" href="{{ $link['link'] != '#' ? route($link['link']) : '#' }}">{{ $link['name'] }}</a>
                             </li>
                             @endforeach
                         </ul>
@@ -36,7 +36,7 @@
                 <h5 class="m-0">FOLLOW US</h5>
                 <!-- Loop through the socials array -->
                 @foreach ($socials as $social)
-                    <a href="{{ $social['link'] }}">
+                    <a href="{{ $social['link'] != '#' ? route($social['link']) : '#' }}">
                         <img class="social" src="{{ $social['img'] }}" alt="{{ $social['img'] }}">
                     </a>
                 @endforeach

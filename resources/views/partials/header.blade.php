@@ -4,7 +4,7 @@
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg w-100 mx-auto py-0 d-flex justify-content-between">
             <!-- Navbar Brand -->
-            <a href="#" class="navbar-brand py-3">
+            <a href="{{ route('home') }}" class="navbar-brand py-3">
                 <img id="logo" src="/images/dc-logo.png" alt="DC logo">
             </a>
 
@@ -24,7 +24,7 @@
                     @foreach ($links as $link)
                         <li class="nav-item fw-bold header-link">
                             <!-- Individual Navbar Link -->
-                            <a aria-current="page" href="#">{{ $link['title'] }}</a>
+                            <a aria-current="page" href="{{ $link['url'] != '#' ? route($link['url']) : '#' }}">{{ $link['title'] }}</a>
                         </li>
                     @endforeach
                 </ul>
