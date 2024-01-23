@@ -24,7 +24,7 @@
                     @foreach ($links as $link)
                         <li class="nav-item fw-bold header-link">
                             <!-- Individual Navbar Link -->
-                            <a aria-current="page" href="{{ $link['url'] != '#' ? route($link['url']) : '#' }}">{{ $link['title'] }}</a>
+                            <a aria-current="page" class="{{ $link['url'] == request()->path() ? 'active' : '' }}" href="{{ $link['url'] != '#' ? route($link['url']) : '#' }}">{{ $link['title'] }}</a>
                         </li>
                     @endforeach
                 </ul>
@@ -77,6 +77,11 @@
         text-decoration: none;
         border-bottom: 6px solid transparent;
         transition: all 0.3s ease-in-out;
+    }
+
+    li.header-link a.active {
+        color: #0c7cec;
+        border-color: #0c7cec;
     }
 
     /* Styles for the links when hovered */
