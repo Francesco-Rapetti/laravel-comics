@@ -56,5 +56,5 @@ Route::get('/', function () {
             'title' => 'SHOP'
         ],
     ];
-    return view('welcome', compact('links'));
+    return view('home', compact('links'));
 });
