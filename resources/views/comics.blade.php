@@ -2,13 +2,25 @@
 
 @section('main')
     <div class="wrapper">
-        <div id="card-container" class=" d-flex justify-content-center flex-wrap">
+        <div id="card-container" class="">
             @foreach ($comics as $comic)
-            <div>
-                <div class="square-card">
+            <div class="d-flex my-5">
+                <div class="square-card me-3 w-25">
                     <img class="w-100" src="{{$comic['thumb']}}" alt="">
                 </div>
-                <h5 class="mt-3">{{$comic['series']}}</h5>
+                <div class="w-75">
+                    <h1 class="mt-3">{{$comic['series']}}</h1>
+                    <div>
+                        @foreach ($comic as $key => $value)
+                            @if ($loop->first)
+                                
+                            @else 
+                                <h5>{{ $key }}</h5>
+                                <p>{{ $value }}</p>
+                            @endif
+                        @endforeach
+                    </div>
+                </div>
             </div>  
             @endforeach
         </div>
@@ -23,8 +35,6 @@
         }
     
         .square-card {
-            width: 200px;
-            height: 200px;
             overflow: hidden;
             cursor: pointer;
         }
